@@ -5,7 +5,7 @@ public class ShootScript : MonoBehaviour
     public GameObject bulletPrefab;
     public Camera mainCamera;
     public LayerMask groundLayer;
-    public float barrelHeight = 2.7f;
+    public Transform barrelTip;
 
     void Update()
     {
@@ -15,13 +15,12 @@ public class ShootScript : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
-                Vector3 direction = (hit.point - transform.position);
+                Vector3 direction = (hit.point - barrelTip.position);
                 direction.y = 0f;
                 direction.Normalize();
 
                 Quaternion rotation = Quaternion.LookRotation(direction);
-                Vector3 spawnPosition = transform.position + direction * 2f + Vector3.up * barrelHeight;
-                GameObject bullet = Instantiate(bulletPrefab, spawnPosition, rotation);
+                GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, rotation);
                 bullet.GetComponent<bulletScript>().SetDirection(direction);
             }
         }
