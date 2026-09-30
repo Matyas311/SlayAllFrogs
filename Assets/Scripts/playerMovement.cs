@@ -6,8 +6,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5.0f;
     public float jumpHeight = 1.5f;
     public float gravity = -9.81f;
-
-    // Add this so other scripts can read movement direction
     public Vector3 MoveDirection { get; private set; }
 
     private CharacterController controller;
@@ -29,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
-        MoveDirection = move; // expose it here
+        MoveDirection = move;
 
         controller.Move(move * speed * Time.deltaTime);
 

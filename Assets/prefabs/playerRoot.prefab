@@ -122,7 +122,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  barrelHeight: 14
   barrelTip: {fileID: 4419881898128508942}
 --- !u!1 &1268486045461849590
 GameObject:
@@ -353,7 +352,7 @@ GameObject:
   - component: {fileID: 706384234593217833}
   - component: {fileID: 6163362032125866330}
   - component: {fileID: 7489712583305220123}
-  - component: {fileID: 2125348221674095910}
+  - component: {fileID: 2751092782823890956}
   m_Layer: 0
   m_Name: head
   m_TagString: Untagged
@@ -429,7 +428,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2125348221674095910
+--- !u!114 &2751092782823890956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -438,13 +437,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2931726578954420358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 361ca6a933eb03740ba912c913154645, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dc6b02267d990c46b9a3d0c1499c2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
+  cam: {fileID: 0}
+  head: {fileID: 0}
+  rotateSpeed: 10
 --- !u!1 &5468670601764208917
 GameObject:
   m_ObjectHideFlags: 0
