@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class RotateBarrel : MonoBehaviour
 {
-    public float sensitivity = 2f;
-
-    private float currentYRotation = 0f;
+    private float sensitivity = 2f;
+    public float currentYRotation = 0f;
 
     void Update()
     {
