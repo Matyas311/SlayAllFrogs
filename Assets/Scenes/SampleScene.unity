@@ -628,6 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393506825c2ba7347931a46280742ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 8596738680299281406, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
 --- !u!1 &2023620872 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2931726578954420358, guid: d4d064d671935634785365937b275f60, type: 3}
@@ -647,63 +648,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7841617337703233974, guid: f51ef253db903f84e9ba390741ee202b, type: 3}
   barrelTip: {fileID: 550806566}
---- !u!1001 &2857007492547428723
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 23.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062045045944719095, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8596738680299281406, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
-      propertyPath: m_Name
-      value: Enemy1Root
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 12acb66d92b133d4e8414cd0ab8e8f30, type: 3}
 --- !u!1001 &7898760865204090884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -851,4 +795,3 @@ SceneRoots:
   - {fileID: 1581186029}
   - {fileID: 280233866}
   - {fileID: 520978703}
-  - {fileID: 2857007492547428723}
