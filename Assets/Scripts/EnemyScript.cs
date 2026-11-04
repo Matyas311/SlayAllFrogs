@@ -1,21 +1,25 @@
-using Unity.VisualScripting;
+using System;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
 
+    [Header("Stats")]
+    [SerializeField] float HP;
+
+
     private GameObject player;
     public float enemyMoveSpeed = 1.0f;
     private float enemyRotateSpeed = 100.0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (player)
@@ -33,5 +37,28 @@ public class EnemyScript : MonoBehaviour
 
         }
 
+    }
+
+    void TakeDamage(float Damage)
+    {
+        float newHP = HP - Damage;
+        if (newHP <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            HP = newHP;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(other.GetComponent<bulletScript>().bulletDamage);
+            Debug.Log("HIT" + HP);
+            Destroy(other.gameObject);
+        }
     }
 }
