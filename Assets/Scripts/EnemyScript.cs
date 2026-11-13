@@ -7,7 +7,7 @@ public class EnemyScript : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] float HP;
-
+    public float contactDamage = 12f;
 
     private GameObject player;
     public float enemyMoveSpeed = 1.0f;
@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(newDirection);
 
 
-            if (distance > 2.3f)
+            if (distance > 7f)
                 transform.position += direction * enemyMoveSpeed * Time.deltaTime;
 
         }
@@ -57,7 +57,6 @@ public class EnemyScript : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             TakeDamage(other.GetComponent<bulletScript>().bulletDamage);
-            Debug.Log("HIT" + HP);
             Destroy(other.gameObject);
         }
     }

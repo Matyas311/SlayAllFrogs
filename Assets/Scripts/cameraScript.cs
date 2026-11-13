@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IsometricCamera : MonoBehaviour
+public class cameraScript : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] Vector3 offset = new Vector3(-15f, 17f, -15f);
