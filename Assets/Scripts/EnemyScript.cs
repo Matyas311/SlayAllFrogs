@@ -24,19 +24,18 @@ public class EnemyScript : MonoBehaviour
     {
         if (player)
         {
-            Vector3 direction = (player.transform.position - transform.position).normalized;
-            float distance = Vector3.Distance(transform.position, player.transform.position);
+            Vector3 direction = player.transform.position - transform.position;
+            direction.y = 0f;
+            float distance = direction.magnitude;
+            direction.Normalize();
 
             float singleStep = enemyRotateSpeed * Time.deltaTime;
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction, singleStep, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDirection);
 
-
             if (distance > 7f)
                 transform.position += direction * enemyMoveSpeed * Time.deltaTime;
-
         }
-
     }
 
     void TakeDamage(float Damage)

@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
-    public float speed = 20.0f;
-    public float bulletDamage = 5.0f;
+    public float bulletDamage;
     public float maxDistance = 30.0f;
 
+    private float speed;
     private Vector3 direction;
     private Vector3 spawnPosition;
 
-    public void SetDirection(Vector3 dir)
+    public void Init(Vector3 dir, float damage, float projectileSpeed)
     {
         direction = dir;
+        bulletDamage = damage;
+        speed = projectileSpeed;
         spawnPosition = transform.position;
     }
 

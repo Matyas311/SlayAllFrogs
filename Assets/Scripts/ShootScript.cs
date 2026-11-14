@@ -1,17 +1,16 @@
-using System.Collections;
 using UnityEngine;
 
 public class ShootScript : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform barrelTip;
+    [SerializeField] PlayerStats stats;
 
-    private float fireRate = 1.0f;
     private float lastShotTime = 0.0f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time - lastShotTime >= fireRate)
+        if (Input.GetMouseButtonDown(0) && Time.time - lastShotTime >= stats.fireRate)
         {
             lastShotTime = Time.time;
 
@@ -21,7 +20,7 @@ public class ShootScript : MonoBehaviour
 
             Quaternion rotation = Quaternion.LookRotation(direction);
             GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, rotation);
-            bullet.GetComponent<bulletScript>().SetDirection(direction);
+            bullet.GetComponent<bulletScript>().Init(direction, stats.damage, stats.projectileSpeed);
         }
     }
 }

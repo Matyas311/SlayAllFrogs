@@ -1,20 +1,21 @@
 using UnityEngine;
-
+using System;
 public class Life : MonoBehaviour
 {
-    [SerializeField] float maxHP = 100f;
-    [SerializeField] float armor = 0f;
-    [SerializeField] float hpRegen = 1.2f; //out of combat (not taking damage or shooting) regenerate this amout per second
-    [SerializeField] float iFrames = 1f; //time before taking damage again 
+    [SerializeField] PlayerStats stats;
+    [SerializeField] float iFrames = 1f;
+
     private float nextDamageTime = 0f;
     private float currentHP;
+    public event Action<float, float> OnHealthChanged; // current, max
+    public float CurrentHP => currentHP;
     private bool isDead = false;
 
     void Start()
     {
-        currentHP = maxHP;
+        currentHP = stats.maxHP;
+        OnHealthChanged?.Invoke(currentHP, stats.maxHP);
     }
-
 
     void OnTriggerStay(Collider other)
     {
@@ -30,8 +31,9 @@ public class Life : MonoBehaviour
 
     void TakeDamage(float damage)
     {
-        float finalDamage = Mathf.Max(damage - armor, 0f);
+        float finalDamage = Mathf.Max(damage - stats.armor, 0f);
         currentHP -= finalDamage;
+        OnHealthChanged?.Invoke(currentHP, stats.maxHP);
         Debug.Log(currentHP);
 
         if (currentHP <= 0f)
