@@ -11,6 +11,8 @@ public class Life : MonoBehaviour
     public float CurrentHP => currentHP;
     private bool isDead = false;
 
+    public event Action OnGameOver;
+
     void Start()
     {
         currentHP = stats.maxHP;
@@ -39,8 +41,9 @@ public class Life : MonoBehaviour
         if (currentHP <= 0f)
         {
             currentHP = 0f;
+            OnHealthChanged?.Invoke(currentHP, stats.maxHP);
             isDead = true;
-            Debug.Log("Game over");
+            OnGameOver?.Invoke();
         }
     }
 }

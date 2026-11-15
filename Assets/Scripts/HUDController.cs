@@ -6,6 +6,7 @@ public class HUDController : MonoBehaviour
 {
     [SerializeField] PlayerStats stats;
     [SerializeField] Life life;
+    [SerializeField] playerLevel level;
 
     [Header("Stat texts")]
     [SerializeField] TMP_Text moveSpeedText;
@@ -19,10 +20,15 @@ public class HUDController : MonoBehaviour
     [SerializeField] Image healthFill;
     [SerializeField] TMP_Text healthText;
 
+    [Header("XP bar")]
+    [SerializeField] Image XPFill;
+    [SerializeField] TMP_Text XPText;
+
     void OnEnable()
     {
         stats.OnStatsChanged += RefreshStats;
         life.OnHealthChanged += RefreshHealth;
+        level.OnXPChanged += RefreshLevel;
     }
 
     void OnDisable()
@@ -51,4 +57,11 @@ public class HUDController : MonoBehaviour
         healthFill.fillAmount = current / max;
         healthText.text = $"{Mathf.CeilToInt(current)} / {Mathf.CeilToInt(max)}";
     }
+
+    void RefreshLevel(int kills, int killsNeeded)
+    {
+        XPFill.fillAmount = (float)kills / killsNeeded;
+        XPText.text = $"LVL: {level.Level}";
+    }
+
 }

@@ -5,7 +5,7 @@ public class PlayerStats : MonoBehaviour
 {
     public event Action OnStatsChanged;
 
-    public float moveSpeed = 10.0f;
+    public float moveSpeed = 15.0f;
     public float hpRegen = 0.8f;
     public float damage = 5.0f;
     public float fireRate = 1.0f;

@@ -11,6 +11,7 @@ public class EnemyScript : MonoBehaviour
 
     private GameObject player;
     public float enemyMoveSpeed = 1.0f;
+    public static event Action OnEnemyDeath;
     private float enemyRotateSpeed = 100.0f;
 
 
@@ -43,6 +44,7 @@ public class EnemyScript : MonoBehaviour
         float newHP = HP - Damage;
         if (newHP <= 0)
         {
+            OnEnemyDeath?.Invoke();
             Destroy(gameObject);
         }
         else
