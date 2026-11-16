@@ -883,7 +883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -715, y: 3.8086853}
+  m_AnchoredPosition: {x: -692, y: 3.8086853}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &460996343
@@ -2163,6 +2163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 1849089496}
   life: {fileID: 1849089495}
+  level: {fileID: 1849089500}
   moveSpeedText: {fileID: 217218337}
   regenText: {fileID: 346237241}
   projectileSpeedText: {fileID: 741750019}
@@ -2171,6 +2172,8 @@ MonoBehaviour:
   armorText: {fileID: 741858855}
   healthFill: {fileID: 2116407851}
   healthText: {fileID: 460996343}
+  XPFill: {fileID: 1103391882}
+  XPText: {fileID: 1855026552}
 --- !u!1 &1054161401
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,7 +2554,7 @@ RectTransform:
   m_GameObject: {fileID: 1103391880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.142134, y: 2.1820605, z: 9.198439}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1067453088}
@@ -2559,7 +2562,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -16.399849, y: -244.03963}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1800, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103391882
 MonoBehaviour:
@@ -2581,11 +2584,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 8ef6793035c21ee45805343a6261954d, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2920,13 +2923,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d119d5e0f7f18c4395851a2d3e4df63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
   hpRegen: 1.2
   damage: 5
   fireRate: 0.5
   projectileSpeed: 20
   armor: 0
   maxHP: 100
+--- !u!114 &1849089500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849089493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f239ed188974c64b83a62f4c15f541f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1855026550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2961,7 +2976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -706, y: -384.71597}
+  m_AnchoredPosition: {x: -691, y: -384.71597}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855026552
@@ -2993,8 +3008,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3111,7 +3126,7 @@ RectTransform:
   m_GameObject: {fileID: 2116407849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.142134, y: 2.1820605, z: 9.198439}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1067453088}
@@ -3119,7 +3134,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -16.399834, y: 129.24847}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1800, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2116407851
 MonoBehaviour:
@@ -3141,11 +3156,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: a9f1a262249fa7f41b678fe187f40f8c, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -3317,6 +3332,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 944258081680466923, guid: d4d064d671935634785365937b275f60, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1849089496}
+    - targetCorrespondingSourceObject: {fileID: 944258081680466923, guid: d4d064d671935634785365937b275f60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1849089500}
     - targetCorrespondingSourceObject: {fileID: 2931726578954420358, guid: d4d064d671935634785365937b275f60, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2023620876}

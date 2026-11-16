@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6062045045944719095}
   - component: {fileID: 9089748122282436432}
   - component: {fileID: 8443664486436470234}
-  - component: {fileID: 2275353234949075033}
   m_Layer: 0
   m_Name: Enemy1Root
   m_TagString: Enemy
@@ -47,33 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318470e1c371c684c91b79a9756713f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
-  contactDamage: 12
+  HP: 21
+  contactDamage: 8
   enemyMoveSpeed: 5
 --- !u!136 &8443664486436470234
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8596738680299281406}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.93
-  m_Height: 6.33
-  m_Direction: 1
-  m_Center: {x: -0.43, y: 0.69, z: 1.65}
---- !u!136 &2275353234949075033
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -372,7 +372,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 42984
+  m_LastSelectedObjectID: 42974
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -420,7 +420,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/PlayerScripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/PlayerScripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\matya\Desktop\maturitaGulp\SlayAllFrogs
   m_LockTracker:
@@ -438,9 +438,9 @@ MonoBehaviour:
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 84ab0000
-    m_LastClickedID: 43908
-    m_ExpandedIDs: 0000000028ab0000
+    m_SelectedIDs: 74ac0000
+    m_LastClickedID: 44148
+    m_ExpandedIDs: 0000000036ab0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -469,7 +469,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000028ab0000
+    m_ExpandedIDs: 0000000036ab0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -498,7 +498,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 0000000000000000000000000000000052a00000
+    m_ExpandedInstanceIDs: 0000000000000000000000000000000052a0000018ac000028ac0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -617,7 +617,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f2c0ffffeec7ffff16fbffff1efbfffffea6000032a7000096a70000d6a70000
+      m_ExpandedIDs: 1efbffff40a7000094a70000b0a70000f2a70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1155,9 +1155,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 93.87403, y: 161.79138, z: -108.70415}
+    m_Target: {x: 451.38885, y: -79.1183, z: -145.6103}
     speed: 2
-    m_Value: {x: 93.87403, y: 161.79138, z: -108.70415}
+    m_Value: {x: 451.38885, y: -79.1183, z: -145.6103}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1207,9 +1207,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.05846245, y: -0.011979116, z: 0.00070173456, w: -0.99821526}
   m_Size:
-    m_Target: 319.32104
+    m_Target: 493.31854
     speed: 2
-    m_Value: 319.32104
+    m_Value: 493.31854
   m_Ortho:
     m_Target: 0
     speed: 2

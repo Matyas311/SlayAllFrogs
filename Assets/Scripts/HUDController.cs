@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] PlayerStats stats;
     [SerializeField] Life life;
     [SerializeField] playerLevel level;
+    [SerializeField] EnemySpawner wave;
 
     [Header("Stat texts")]
     [SerializeField] TMP_Text moveSpeedText;
@@ -24,17 +26,23 @@ public class HUDController : MonoBehaviour
     [SerializeField] Image XPFill;
     [SerializeField] TMP_Text XPText;
 
+    [Header("Waves")]
+    [SerializeField] TMP_Text waveNumber;
+
     void OnEnable()
     {
         stats.OnStatsChanged += RefreshStats;
         life.OnHealthChanged += RefreshHealth;
         level.OnXPChanged += RefreshLevel;
+        wave.OnWaveChanged += RefreshWaves;
     }
 
     void OnDisable()
     {
         stats.OnStatsChanged -= RefreshStats;
         life.OnHealthChanged -= RefreshHealth;
+        level.OnXPChanged -= RefreshLevel;
+        wave.OnWaveChanged -= RefreshWaves;
     }
 
     void Start()
@@ -62,6 +70,11 @@ public class HUDController : MonoBehaviour
     {
         XPFill.fillAmount = (float)kills / killsNeeded;
         XPText.text = $"LVL: {level.Level}";
+    }
+
+    void RefreshWaves(int currentWave)
+    {
+        waveNumber.text = wave.CurrentWave.ToString();
     }
 
 }
