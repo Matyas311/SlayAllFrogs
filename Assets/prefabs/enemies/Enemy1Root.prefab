@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318470e1c371c684c91b79a9756713f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 21
+  HP: 15
   contactDamage: 8
   enemyMoveSpeed: 5
 --- !u!136 &8443664486436470234

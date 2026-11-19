@@ -36,7 +36,6 @@ public class Life : MonoBehaviour
         float finalDamage = Mathf.Max(damage - stats.armor, 0f);
         currentHP -= finalDamage;
         OnHealthChanged?.Invoke(currentHP, stats.maxHP);
-        Debug.Log(currentHP);
 
         if (currentHP <= 0f)
         {

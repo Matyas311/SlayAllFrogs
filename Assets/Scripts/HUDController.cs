@@ -54,8 +54,8 @@ public class HUDController : MonoBehaviour
     {
         moveSpeedText.text = stats.moveSpeed.ToString("0.#");
         regenText.text = stats.hpRegen.ToString("0.#");
-        projectileSpeedText.text = stats.hpRegen.ToString("0.#");
-        fireRateText.text = stats.hpRegen.ToString("0.#");
+        projectileSpeedText.text = stats.projectileSpeed.ToString("0.#");
+        fireRateText.text = stats.fireRate.ToString("0.#");
         damageText.text = stats.damage.ToString("0.#");
         armorText.text = stats.armor.ToString("0.#");
     }

@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float spawnRadius = 40f;
     [SerializeField] float spawnInterval = 1.5f;
     [SerializeField] float timeBetweenWaves = 5f;
+    [SerializeField, Range(0f, 0.5f)] float randomness = 0.4f;
 
     private int currentWave = 1;
     public int CurrentWave => currentWave;
@@ -40,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
 
                 foreach (WaveEntry entry in tier.entries)
                 {
-                    int count = RollCount(entry, progress);
+                    int count = RollCount(entry, progress, tier.toWave - tier.fromWave + 1);
                     for (int i = 0; i < count; i++)
                     {
                         SpawnEnemy(entry.prefab);
@@ -75,11 +76,13 @@ public class EnemySpawner : MonoBehaviour
         return tiers.Count > 0 ? tiers[tiers.Count - 1] : null;
     }
 
-    int RollCount(WaveEntry entry, float progress)
+    int RollCount(WaveEntry entry, float progress, int tierLength)
     {
-        float low = Mathf.Lerp(entry.minCount, entry.maxCount, progress * 0.5f);
-        float high = Mathf.Lerp(entry.minCount, entry.maxCount, 0.5f + progress * 0.5f);
-        return UnityEngine.Random.Range(Mathf.RoundToInt(low), Mathf.RoundToInt(high) + 1);
+        float baseCount = Mathf.Lerp(entry.minCount, entry.maxCount, progress);
+        float step = (entry.maxCount - entry.minCount) / Mathf.Max(1, tierLength - 1);
+        float spread = step * randomness;
+        int count = Mathf.RoundToInt(baseCount + UnityEngine.Random.Range(-spread, spread));
+        return Mathf.Clamp(count, entry.minCount, entry.maxCount);
     }
 
     void SpawnEnemy(GameObject prefab)
