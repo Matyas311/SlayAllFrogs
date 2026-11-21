@@ -58,6 +58,7 @@ public class HUDController : MonoBehaviour
         fireRateText.text = stats.fireRate.ToString("0.#");
         damageText.text = stats.damage.ToString("0.#");
         armorText.text = stats.armor.ToString("0.#");
+
     }
 
     void RefreshHealth(float current, float max)

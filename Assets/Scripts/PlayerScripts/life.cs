@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.AI;
 public class Life : MonoBehaviour
 {
     [SerializeField] PlayerStats stats;
@@ -7,15 +8,20 @@ public class Life : MonoBehaviour
 
     private float nextDamageTime = 0f;
     private float currentHP;
+    private float lastMaxHP;
     public event Action<float, float> OnHealthChanged; // current, max
     public float CurrentHP => currentHP;
     private bool isDead = false;
 
     public event Action OnGameOver;
 
+    void OnEnable() => stats.OnStatsChanged += HandleStatsChanged;
+    void OnDisable() => stats.OnStatsChanged -= HandleStatsChanged;
+
     void Start()
     {
         currentHP = stats.maxHP;
+        lastMaxHP = stats.maxHP;
         OnHealthChanged?.Invoke(currentHP, stats.maxHP);
     }
 
@@ -44,5 +50,18 @@ public class Life : MonoBehaviour
             isDead = true;
             OnGameOver?.Invoke();
         }
+    }
+
+    void HandleStatsChanged()
+    {
+        float diff = stats.maxHP - lastMaxHP;
+        if (diff == 0f) return;
+
+        if (diff > 0f) currentHP += diff;
+        currentHP = Mathf.Min(currentHP, stats.maxHP);
+        lastMaxHP = stats.maxHP;
+
+        OnHealthChanged?.Invoke(currentHP, stats.maxHP);
+
     }
 }

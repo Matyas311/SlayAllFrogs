@@ -13,6 +13,7 @@ public class EnemyScript : MonoBehaviour
     public float enemyMoveSpeed = 1.0f;
     public static event Action OnEnemyDeath;
     private float enemyRotateSpeed = 100.0f;
+    private bool isDead;
 
 
     void Start()
@@ -39,26 +40,27 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    void TakeDamage(float Damage)
+    public void TakeDamage(float damage)
     {
-        float newHP = HP - Damage;
-        if (newHP <= 0)
+        if (isDead) return;
+
+        HP -= damage;
+        if (HP <= 0f)
         {
+            isDead = true;
             OnEnemyDeath?.Invoke();
             Destroy(gameObject);
-        }
-        else
-        {
-            HP = newHP;
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet"))
-        {
-            TakeDamage(other.GetComponent<bulletScript>().bulletDamage);
-            Destroy(other.gameObject);
-        }
+        if (!other.CompareTag("Bullet")) return;
+
+        bulletScript bullet = other.GetComponent<bulletScript>();
+        TakeDamage(bullet.bulletDamage);
+        ElementEffects.OnHit(bullet.element, this, transform.position, bullet.bulletDamage);
+        Destroy(other.gameObject);
+
     }
 }

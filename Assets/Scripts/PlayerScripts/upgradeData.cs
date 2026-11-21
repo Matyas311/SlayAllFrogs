@@ -1,6 +1,6 @@
 using System;
 
-public enum StatType { Damage, FireRate, MoveSpeed, ProjectileSpeed, Armor, HpRegen, maxHP }
+public enum StatType { Damage, FireRate, MoveSpeed, ProjectileSpeed, Armor, HpRegen, MaxHP }
 
 [Serializable]
 public class UpgradeData

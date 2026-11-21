@@ -65,7 +65,7 @@ public class upgradePanel : MonoBehaviour
             case StatType.MoveSpeed: stats.moveSpeed += u.amount; break;
             case StatType.ProjectileSpeed: stats.projectileSpeed += u.amount; break;
             case StatType.Armor: stats.armor += u.amount; break;
-            case StatType.maxHP: stats.maxHP += u.amount; break;
+            case StatType.MaxHP: stats.maxHP += u.amount; break;
         }
     }
 
