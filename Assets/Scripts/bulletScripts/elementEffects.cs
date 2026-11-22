@@ -13,6 +13,12 @@ public static class ElementEffects
             case Element.Water:
                 Splash(primary, point, damage * WaterDamageMultiplier, WaterRadius);
                 break;
+            case Element.Fire:
+                primary.ApplyBurn(2, 0.05f);
+                break;
+            case Element.Ground:
+                primary.ApplySlow(2f, 0.7f);
+                break;
         }
     }
 
@@ -30,4 +36,5 @@ public static class ElementEffects
             enemy.TakeDamage(damage);
         }
     }
+
 }

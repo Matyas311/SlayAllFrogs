@@ -3731,6 +3731,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f239ed188974c64b83a62f4c15f541f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1849089504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849089493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350316aa887d09c4db5c21e358b99afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 1849089496}
+  equipped: 01000000
 --- !u!1 &1855026550
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,6 +4125,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7841617337703233974, guid: f51ef253db903f84e9ba390741ee202b, type: 3}
   barrelTip: {fileID: 550806566}
   stats: {fileID: 1849089496}
+  loadout: {fileID: 1849089504}
 --- !u!1 &2053440996
 GameObject:
   m_ObjectHideFlags: 0
@@ -4470,6 +4485,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 944258081680466923, guid: d4d064d671935634785365937b275f60, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1849089500}
+    - targetCorrespondingSourceObject: {fileID: 944258081680466923, guid: d4d064d671935634785365937b275f60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1849089504}
     - targetCorrespondingSourceObject: {fileID: 2931726578954420358, guid: d4d064d671935634785365937b275f60, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2023620876}

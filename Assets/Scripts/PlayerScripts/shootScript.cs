@@ -6,7 +6,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform barrelTip;
     [SerializeField] PlayerStats stats;
-    [SerializeField] Element element = Element.Water;   // temporary until the element UI exists
+    [SerializeField] playerLoadout loadout;
 
     private float lastShotTime = 0.0f;
 
@@ -22,7 +22,7 @@ public class ShootScript : MonoBehaviour
 
             Quaternion rotation = Quaternion.LookRotation(direction);
             GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, rotation);
-            bullet.GetComponent<bulletScript>().Init(direction, stats.damage, stats.projectileSpeed, element);
+            bullet.GetComponent<bulletScript>().Init(direction, stats.damage, stats.projectileSpeed, loadout.ActiveElement);
         }
     }
 }
