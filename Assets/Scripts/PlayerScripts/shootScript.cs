@@ -4,6 +4,7 @@ using UnityEngine;
 public class ShootScript : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] ElementBullet[] elementBullets;
     [SerializeField] Transform barrelTip;
     [SerializeField] PlayerStats stats;
     [SerializeField] playerLoadout loadout;
@@ -21,8 +22,19 @@ public class ShootScript : MonoBehaviour
             direction.Normalize();
 
             Quaternion rotation = Quaternion.LookRotation(direction);
-            GameObject bullet = Instantiate(bulletPrefab, barrelTip.position, rotation);
-            bullet.GetComponent<bulletScript>().Init(direction, stats.damage, stats.projectileSpeed, loadout.ActiveElement);
+            Element current = loadout.ActiveElement;
+            GameObject prefab = GetPrefab(current);
+            GameObject bullet = Instantiate(prefab, barrelTip.position, rotation);
+            bullet.GetComponent<bulletScript>().Init(direction, stats.damage, stats.projectileSpeed, current);
         }
+    }
+
+    GameObject GetPrefab(Element element)
+    {
+        foreach (ElementBullet eb in elementBullets)
+            if (eb.element == element && eb.prefab != null)
+                return eb.prefab;
+
+        return bulletPrefab;
     }
 }

@@ -6,7 +6,7 @@ public static class ElementEffects
     const float WaterRadius = 4f;
     const float WaterDamageMultiplier = 0.5f;
 
-    public static void OnHit(Element element, EnemyScript primary, Vector3 point, float damage)
+    public static void OnHit(Element element, EnemyScript primary, Vector3 point, float damage, Vector3 hitDirection)
     {
         switch (element)
         {
@@ -18,6 +18,9 @@ public static class ElementEffects
                 break;
             case Element.Ground:
                 primary.ApplySlow(2f, 0.7f);
+                break;
+            case Element.Wind:
+                primary.ApplyKnockback(hitDirection, 18f);
                 break;
         }
     }

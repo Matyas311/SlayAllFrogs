@@ -8,6 +8,7 @@ public class bulletScript : MonoBehaviour
 
     private float speed;
     private Vector3 direction;
+    public Vector3 Direction => direction;
     private Vector3 spawnPosition;
 
     public void Init(Vector3 dir, float damage, float projectileSpeed, Element elem)

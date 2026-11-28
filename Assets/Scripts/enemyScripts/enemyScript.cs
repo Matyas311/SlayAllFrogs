@@ -27,6 +27,11 @@ public class EnemyScript : MonoBehaviour
     private float slowTimeLeft;
     private float slowMultiplier = 1f;
 
+    //Wind related
+    private Vector3 knockbackVelocity;
+    private float knockbackDrag = 24f;
+
+
 
 
     void Start()
@@ -54,6 +59,7 @@ public class EnemyScript : MonoBehaviour
         }
         HandleBurn();
         HandleSlow();
+        HandleKnockback();
     }
 
     public void TakeDamage(float damage)
@@ -75,7 +81,7 @@ public class EnemyScript : MonoBehaviour
 
         bulletScript bullet = other.GetComponent<bulletScript>();
         TakeDamage(bullet.bulletDamage);
-        ElementEffects.OnHit(bullet.element, this, transform.position, bullet.bulletDamage);
+        ElementEffects.OnHit(bullet.element, this, transform.position, bullet.bulletDamage, bullet.Direction);
         Destroy(other.gameObject);
 
     }
@@ -123,5 +129,24 @@ public class EnemyScript : MonoBehaviour
         {
             slowMultiplier = 1f;
         }
+    }
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////
+    ////////WIND ELEMENT RELATED FUNCTIONS////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////
+    public void ApplyKnockback(Vector3 direction, float force)
+    {
+        direction.y = 0f;
+        knockbackVelocity = direction.normalized * force;
+    }
+
+    void HandleKnockback()
+    {
+        if (knockbackVelocity == Vector3.zero) return;
+
+        transform.position += knockbackVelocity * Time.deltaTime;
+        knockbackVelocity = Vector3.MoveTowards(knockbackVelocity, Vector3.zero, knockbackDrag * Time.deltaTime);
     }
 }
